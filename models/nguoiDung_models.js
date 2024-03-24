@@ -10,7 +10,6 @@ var userSchema = new db.mongoose.Schema(
     password: { type: String, required: true },
     email: { type: String, required: true },
     token: {
-
       type: String,
       required: false,
     },

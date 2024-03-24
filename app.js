@@ -12,6 +12,7 @@ var dichVuRouter = require('./routes/dichVu_routes');
 var hoaDonRouter = require('./routes/hoaDon_routes')
 var khachHangRouter = require("./routes/khachHang_routes");
 var chiTietHoaDonRouter = require("./routes/chiTietHoaDon_routes");
+var nguoiDungRouter = require("./routes/nguoiDung_routes");
 
 var app = express();
 
@@ -33,6 +34,7 @@ app.use('/nhanviens', nhanVienRouter);
 app.use('/hoadons',hoaDonRouter);
 app.use('/khachhangs',khachHangRouter);
 app.use('/chitiethoadons',chiTietHoaDonRouter);
+app.use('/nguoidungs',nguoiDungRouter);
 
 
 // catch 404 and forward to error handler
