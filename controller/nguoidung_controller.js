@@ -21,6 +21,23 @@ exports.DanhSach = async(req,res,next)=>{
 
 }
 
+exports.checkExistedUser = async(req,res,next)=>{
+  await db.mongoose.connect(COMMON.uri);
+  try {
+    const { email } = req.params;
+    const userIsExisted = await userModel.findOne({ email });
+    if (userIsExisted) {
+      return res.status(200).json({ exists: true });
+    } else {
+      return res.status(200).json({ exists: false });
+    }
+  } catch (error) {
+    console.error('Error checking email existence:', error);
+    return res.status(500).json({ error: 'Internal server error' });
+  }
+}
+
+
 exports.doLogin = async (req, res, next) => {
   await db.mongoose.connect(COMMON.uri);
   try {
