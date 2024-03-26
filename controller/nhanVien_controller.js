@@ -23,6 +23,7 @@ exports.addNhanVien = async (req, res, next) => {
     const newNhanVien = new NhanVienModel({
       hoTen: req.body.hoTen,
       tenNguoiDung: req.body.tenNguoiDung,
+      vaiTro:req.body.vaiTro,
       matKhau: req.body.matKhau,
       email: req.body.email,
       diaChi: req.body.diaChi,
@@ -88,6 +89,8 @@ exports.updateNhanVien = async (req, res, next) => {
       updateNhanVien.hoTen = data.hoTen ?? updateNhanVien.hoTen;
       updateNhanVien.tenNguoiDung =
         data.tenNguoiDung ?? updateNhanVien.tenNguoiDung;
+      updateNhanVien.vaiTro =
+        data.vaiTro ?? updateNhanVien.vaiTro;
       updateNhanVien.matKhau = data.matKhau ?? updateNhanVien.matKhau;
       updateNhanVien.email = data.email ?? updateNhanVien.email;
       updateNhanVien.diaChi = data.diaChi ?? updateNhanVien.diaChi;
@@ -117,4 +120,5 @@ exports.updateNhanVien = async (req, res, next) => {
       data: [],
     });
   }
+  
 };

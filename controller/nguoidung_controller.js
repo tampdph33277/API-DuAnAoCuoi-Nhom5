@@ -53,7 +53,10 @@ exports.doLogin = async (req, res, next) => {
     return res.status(200).send({ user, token });
   } catch (error) {
     console.log(error);
-    return res.status(400).send(error);
+    return res.status(400).json({
+      status: 400,
+      messenger: "Internal Server Error",
+    });
   }
 };
 exports.doReg = async (req, res, next) => {
